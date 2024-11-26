@@ -9,6 +9,7 @@ import io.jmix.security.model.EntityPolicyAction;
 import io.jmix.security.role.annotation.EntityAttributePolicy;
 import io.jmix.security.role.annotation.EntityPolicy;
 import io.jmix.security.role.annotation.ResourceRole;
+import io.jmix.security.role.annotation.SpecificPolicy;
 import io.jmix.securityflowui.role.annotation.MenuPolicy;
 import io.jmix.securityflowui.role.annotation.ViewPolicy;
 
@@ -35,4 +36,7 @@ public interface ReaderRole {
     @MenuPolicy(menuIds = {"Customer.list", "Product.list", "Order_.list"})
     @ViewPolicy(viewIds = {"Customer.list", "Product.list", "Order_.list"})
     void screens();
+
+    @SpecificPolicy(resources = "ui.loginToUi")
+    void specific();
 }
